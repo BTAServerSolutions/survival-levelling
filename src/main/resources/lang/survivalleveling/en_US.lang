@@ -1,0 +1,6 @@
+survivalleveling.fts.title=Survival Leveling Setup
+survivalleveling.fts.line1=Survival Leveling increases the maximum health of the player from 20 to 40.
+survivalleveling.fts.line2=Therefore, it's recommended to change the HUD to a more RPG-like HUD so that
+survivalleveling.fts.line3=the hearts don't overlap with your armour.
+survivalleveling.fts.changehud=Change HUD
+survivalleveling.fts.dontchangehud=Don't Change HUD
