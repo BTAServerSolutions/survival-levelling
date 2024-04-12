@@ -60,7 +60,7 @@ public class FirstSetupMenu extends GuiScreen {
 		}
 
 		if (button.id == 0) {
-			String rpgHotbar = "hotbar{[];abs[0.19791667,0.90909094,TOP_CENTER]}|crosshair{[];abs[0.5,0.5,CENTER]}|health_bar{[];abs[0.083333336,0.8801653,BOTTOM_CENTER]}|armor_bar{[];abs[0.083333336,0.838843,BOTTOM_CENTER]}|oxygen_bar{[];abs[0.083333336,0.79752064,BOTTOM_CENTER]}|fire_bar{[];abs[0.083333336,0.75619835,BOTTOM_CENTER]}|rotation_lock{[];snap[crosshair,CENTER_RIGHT,CENTER_LEFT]}|exp{[];abs[0.18958333,0.90909094,BOTTOM_CENTER]}|";
+			String rpgHotbar = "hotbar{[];abs[0.5,0.90909094,TOP_CENTER]}|crosshair{[];abs[0.5,0.5,CENTER]}|health_bar{[];snap[exp,TOP_LEFT,BOTTOM_LEFT]}|armor_bar{[];snap[health_bar,TOP_CENTER,BOTTOM_CENTER]}|oxygen_bar{[];snap[armor_bar,TOP_CENTER,BOTTOM_CENTER]}|fire_bar{[];snap[oxygen_bar,TOP_CENTER,BOTTOM_CENTER]}|rotation_lock{[];snap[crosshair,CENTER_RIGHT,CENTER_LEFT]}|exp{[];snap[hotbar,TOP_LEFT,BOTTOM_LEFT]}|";
 			HudComponents.INSTANCE.fromSettingsString(rpgHotbar);
 		}
 

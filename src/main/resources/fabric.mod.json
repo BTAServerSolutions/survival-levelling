@@ -6,7 +6,7 @@
   "name": "Survival Leveling",
   "description": "This mod introduces a new leveling system that affects your health.",
   "authors": [
-    "Turnip Labs"
+    "midnadimple"
   ],
   "contact": {
     "homepage": "",
@@ -36,7 +36,7 @@
   ],
 
   "depends": {
-		"minecraft": "~7.1-beta.2",
+		"minecraft": "7.1",
     "fabricloader": ">=0.15.5"
   },
   "suggests": {

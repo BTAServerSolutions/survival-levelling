@@ -23,7 +23,7 @@ public abstract class EntityPlayerMixin extends EntityLiving implements IEntityP
 	@Unique
 	private int exp = 0;
 	@Unique
-	private static int[] levelGates = {6, 9, 12, 15, 18, 21, 27, 33, 39, 45, 51, 57, 63, 69, 75, 81};
+	private static final int[] levelGates = {6, 9, 12, 15, 18, 21, 27, 33, 39, 45, 51, 57, 63, 69, 75, 81};
 	@Unique
 	private static final int baseHealth = 8;
 	@Unique
@@ -46,6 +46,11 @@ public abstract class EntityPlayerMixin extends EntityLiving implements IEntityP
 		return levelGates[level - 1];
 	}
 
+	@Override
+	public int survival_leveling$getLevel() {
+		return level;
+	}
+
 	@Inject(method = "getMaxHealth", at = @At("HEAD"), cancellable = true)
 	private void getMaxHealth(CallbackInfoReturnable<Integer> cir) {
 		if (mc.theWorld.getGameRule(SurvivalLeveling.ALLOW_SURVIVAL_LEVELING)) {
@@ -61,7 +66,7 @@ public abstract class EntityPlayerMixin extends EntityLiving implements IEntityP
 		if (exp >= survival_leveling$getNextLevelGate()) {
 			exp = 0;
 			level += 1;
-			this.setHealthRaw(this.getHealth() + 1);
+			this.setHealthRaw(this.getHealth() + 2);
 			System.out.println("Player leveled up, now level " + level + ", max health " + this.getMaxHealth() + ", health " + this.getHealth());
 		}
 	}

@@ -21,7 +21,7 @@ public class ExpBarComponent extends MovableHudComponent {
 		return true;
 	}
 
-	private void renderExpBar(Minecraft mc, Gui gui, int x, int y, float exp_percent)
+	private void renderExpBar(Minecraft mc, Gui gui, int x, int y, float exp_percent, int level)
 	{
 		GL11.glDisable(GL11.GL_BLEND);
 
@@ -34,6 +34,8 @@ public class ExpBarComponent extends MovableHudComponent {
 		int height = 5;
 		gui.drawTexturedModalRect(x, y, 0, 0, width, height);
 		gui.drawTexturedModalRect(x, y, 0, height, (int) (exp_percent * width), height);
+
+		mc.fontRenderer.drawStringWithShadow(Integer.toString(level), x + (width / 2), y - 2, 0xFFFF55);
 	}
 
 	@Override
@@ -44,7 +46,7 @@ public class ExpBarComponent extends MovableHudComponent {
 
 		IEntityPlayerMixin player = (IEntityPlayerMixin) mc.thePlayer;
 
-		renderExpBar(mc, gui, x, y, player.survival_leveling$getExp() / (float) player.survival_leveling$getNextLevelGate());
+		renderExpBar(mc, gui, x, y, player.survival_leveling$getExp() / (float) player.survival_leveling$getNextLevelGate(), player.survival_leveling$getLevel());
 	}
 
 	@Override
@@ -53,7 +55,7 @@ public class ExpBarComponent extends MovableHudComponent {
 		int x = layout.getComponentX(mc, this, xSizeScreen);
 		int y = layout.getComponentY(mc, this, ySizeScreen);
 
-		renderExpBar(mc, gui, x, y, 1.0f);
+		renderExpBar(mc, gui, x, y, 1.0f, 1);
 	}
 
 	private void setColor(Color color)
