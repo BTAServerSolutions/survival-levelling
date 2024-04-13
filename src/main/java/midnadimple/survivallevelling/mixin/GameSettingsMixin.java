@@ -1,6 +1,6 @@
-package midnadimple.survivalleveling.mixin;
+package midnadimple.survivallevelling.mixin;
 
-import midnadimple.survivalleveling.mixininterface.ILevelingSettings;
+import midnadimple.survivallevelling.mixininterface.ILevelingSettings;
 import net.minecraft.client.option.BooleanOption;
 import net.minecraft.client.option.GameSettings;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,10 +13,10 @@ public class GameSettingsMixin implements ILevelingSettings
 	private final GameSettings thisAs = (GameSettings)((Object)this);
 	@Unique
 	public BooleanOption firstSetupFinished =
-		new BooleanOption(thisAs, "survivalleveling.options.firstSetupFinished", false);
+		new BooleanOption(thisAs, "survivallevelling.options.firstSetupFinished", false);
 
 	@Override
-	public BooleanOption survival_leveling$firstSetupFinished()
+	public BooleanOption survival_levelling$firstSetupFinished()
 	{
 		return firstSetupFinished;
 	}

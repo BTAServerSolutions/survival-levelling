@@ -1,4 +1,4 @@
-package midnadimple.survivalleveling;
+package midnadimple.survivallevelling.gui;
 
 import net.minecraft.client.gui.hud.ComponentAnchor;
 import net.minecraft.client.gui.hud.Layout;

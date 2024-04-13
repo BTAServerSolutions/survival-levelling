@@ -1,11 +1,12 @@
-package midnadimple.survivalleveling.mixin;
+package midnadimple.survivallevelling.mixin;
 
-import midnadimple.survivalleveling.SurvivalLeveling;
+import midnadimple.survivallevelling.SurvivalLevelling;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.hud.HealthBarComponent;
 import net.minecraft.core.item.ItemBucketIceCream;
 import net.minecraft.core.item.ItemFood;
+import net.minecraft.core.player.gamemode.Gamemode;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -28,8 +29,7 @@ public class HealthBarComponentMixin {
 	// This function is the definition of jank
 	@Inject(method = "render", at = @At("HEAD"), cancellable = true)
 	public void render(Minecraft mc, GuiIngame gui, int xSizeScreen, int ySizeScreen, float partialTick, CallbackInfo ci) {
-		if (mc.theWorld.getGameRule(SurvivalLeveling.ALLOW_SURVIVAL_LEVELING)) {
-
+		if (mc.theWorld.getGameRule(SurvivalLevelling.ALLOW_survival_levelling) && mc.thePlayer.getGamemode() == Gamemode.survival) {
 			int x = thisAs.getLayout().getComponentX(mc, thisAs, xSizeScreen);
 			int y = thisAs.getLayout().getComponentY(mc, thisAs, ySizeScreen);
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);

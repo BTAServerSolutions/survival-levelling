@@ -1,14 +1,19 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "midnadimple.survivalleveling.mixin",
+  "package": "midnadimple.survivallevelling.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "EntityMonsterMixin",
     "EntityPlayerMixin",
+    "EntityPlayerMPMixin",
+    "EntityPlayerSPMixin",
     "GameSettingsMixin",
     "HealthBarComponentMixin",
-    "MinecraftMixin"
+    "MinecraftMixin",
+    "NetClientHandlerMixin",
+    "NetLoginHandlerMixin",
+    "NetServerHandlerMixin"
   ],
   "client": [
   ],

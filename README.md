@@ -1,4 +1,4 @@
-# Survival Leveling
+# Survival Levelling
 
 ...is a [Better than Adventure](https://www.betterthanadventure.net) mod that aims to bring a new form of challenge and
 progression to your Beta Minecraft experience!
@@ -15,11 +15,11 @@ The general idea is:
 There'll be new buffed mobs and weapons, along with a new dimension in future releases.
 
 # Downloads
-You can view the source code [here](https://github.com/midnadimple/survival-leveling) and get the latest release
-[here](https://github.com/midnadimple/survival-leveling/releases/latest).
+You can view the source code [here](https://github.com/midnadimple/survival-levelling) and get the latest release
+[here](https://github.com/midnadimple/survival-levelling/releases/latest).
 
 ## Roadmap
-- [x] Notch's leveling system
+- [x] Notch's levelling system
 - [ ] Multiplayer
 - [ ] Changes to Beds
 - [ ] Buffed enemies

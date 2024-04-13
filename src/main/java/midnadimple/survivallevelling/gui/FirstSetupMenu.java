@@ -1,5 +1,6 @@
-package midnadimple.survivalleveling;
+package midnadimple.survivallevelling.gui;
 
+import midnadimple.survivallevelling.SurvivalLevelling;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.hud.HudComponents;
@@ -12,8 +13,8 @@ public class FirstSetupMenu extends GuiScreen {
 
 	@Override
 	public void init() {
-		GuiButton changeHudButton = new GuiButton(0, this.width / 2 - 105, this.height / 2 + 15, 100, 20, loc.translateKey("survivalleveling.fts.changehud"));
-		GuiButton dontChangeHudButton = new GuiButton(1, this.width / 2 + 5, this.height / 2 + 15, 100, 20, loc.translateKey("survivalleveling.fts.dontchangehud"));
+		GuiButton changeHudButton = new GuiButton(0, this.width / 2 - 105, this.height / 2 + 15, 100, 20, loc.translateKey("survivallevelling.fts.changehud"));
+		GuiButton dontChangeHudButton = new GuiButton(1, this.width / 2 + 5, this.height / 2 + 15, 100, 20, loc.translateKey("survivallevelling.fts.dontchangehud"));
 		controlList.add(changeHudButton);
 		controlList.add(dontChangeHudButton);
 	}
@@ -40,12 +41,12 @@ public class FirstSetupMenu extends GuiScreen {
 		int titleHeight = (height / 2) - 25;
 
 		// Title
-		drawStringCentered(fontRenderer, loc.translateKey("survivalleveling.fts.title"), width / 2, titleHeight - 12, 0xFFFFFF);
+		drawStringCentered(fontRenderer, loc.translateKey("survivallevelling.fts.title"), width / 2, titleHeight - 12, 0xFFFFFF);
 
 		// Lines
 		for (int i = 1; i <= lines; i++)
 		{
-			drawStringCentered(fontRenderer, loc.translateKey("survivalleveling.fts.line" + i), width / 2, (titleHeight + ((12 * (i - 1)))), 0x9E9E9E);
+			drawStringCentered(fontRenderer, loc.translateKey("survivallevelling.fts.line" + i), width / 2, (titleHeight + ((12 * (i - 1)))), 0x9E9E9E);
 		}
 
 		super.drawScreen(mouseX, mouseY, partialTick);
@@ -64,7 +65,7 @@ public class FirstSetupMenu extends GuiScreen {
 			HudComponents.INSTANCE.fromSettingsString(rpgHotbar);
 		}
 
-		SurvivalLeveling.options.survival_leveling$firstSetupFinished().set(true);
+		SurvivalLevelling.options.survival_levelling$firstSetupFinished().set(true);
 		mc.gameSettings.saveOptions();
 	}
 }

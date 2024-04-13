@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "survivalleveling",
+  "id": "survivallevelling",
   "version": "${version}",
 
   "name": "Survival Leveling",
@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "",
-    "sources": "https://github.com/midnadimple/survival-leveling"
+    "sources": "https://github.com/midnadimple/survival-levelling"
   },
 
 	"icon": "icon.png",
@@ -19,20 +19,20 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"midnadimple.survivalleveling.SurvivalLeveling"
+			"midnadimple.survivallevelling.SurvivalLevelling"
     ],
 		"beforeGameStart": [
-			"midnadimple.survivalleveling.SurvivalLeveling"
+			"midnadimple.survivallevelling.SurvivalLevelling"
 		],
 		"afterGameStart": [
-			"midnadimple.survivalleveling.SurvivalLeveling"
+			"midnadimple.survivallevelling.SurvivalLevelling"
 		],
 		"recipesReady": [
-			"midnadimple.survivalleveling.SurvivalLeveling"
+			"midnadimple.survivallevelling.SurvivalLevelling"
 		]
 	},
   "mixins": [
-		"survivalleveing.mixins.json"
+		"survivallevelling.mixins.json"
   ],
 
   "depends": {

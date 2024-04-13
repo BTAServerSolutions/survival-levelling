@@ -1,8 +1,8 @@
-package midnadimple.survivalleveling.mixin;
+package midnadimple.survivallevelling.mixin;
 
-import midnadimple.survivalleveling.FirstSetupMenu;
-import midnadimple.survivalleveling.SurvivalLeveling;
-import midnadimple.survivalleveling.mixininterface.ILevelingSettings;
+import midnadimple.survivallevelling.gui.FirstSetupMenu;
+import midnadimple.survivallevelling.SurvivalLevelling;
+import midnadimple.survivallevelling.mixininterface.ILevelingSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.option.GameSettings;
@@ -21,9 +21,9 @@ public abstract class MinecraftMixin {
 
 	@Inject(method = "startGame", at = @At("TAIL"))
 	private void startGame(CallbackInfo ci) {
-		SurvivalLeveling.options = (ILevelingSettings) gameSettings;
+		SurvivalLevelling.options = (ILevelingSettings) gameSettings;
 
-		if (!SurvivalLeveling.options.survival_leveling$firstSetupFinished().value) {
+		if (!SurvivalLevelling.options.survival_levelling$firstSetupFinished().value) {
 			displayGuiScreen(new FirstSetupMenu());
 			System.out.println("First time setup for survival leveling");
 		}
