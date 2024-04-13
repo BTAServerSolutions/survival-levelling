@@ -2,24 +2,23 @@ package midnadimple.survivallevelling.commands;
 
 import midnadimple.survivallevelling.mixininterface.IEntityPlayerMixin;
 import net.minecraft.core.net.command.Command;
+import net.minecraft.core.net.command.CommandError;
 import net.minecraft.core.net.command.CommandHandler;
 import net.minecraft.core.net.command.CommandSender;
 
 public class ExpCommand extends Command {
 	public ExpCommand() {
-		super("exp", (String) null);
+		super("exp");
 	}
 
 	@Override
 	public boolean execute(CommandHandler handler, CommandSender sender, String[] args) {
 		if (args.length < 1 || args.length > 2) {
-			sender.sendMessage("Incorrect number of arguments");
 			return false;
 		}
 
 		if (!handler.playerExists(args[0])) {
-			sender.sendMessage("There is no player named " + args[0]);
-			return false;
+			throw new CommandError("There is no player named " + args[0]);
 		}
 
 		IEntityPlayerMixin player = (IEntityPlayerMixin) handler.getPlayer(args[0]);
