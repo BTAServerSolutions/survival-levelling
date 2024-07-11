@@ -20,8 +20,9 @@ You can view the source code [here](https://github.com/midnadimple/survival-leve
 
 ## Roadmap
 - [x] Notch's levelling system
-- [ ] Multiplayer
-- [ ] Changes to Beds
+- [x] Multiplayer
+
+- [ ] Blocking and Parrying
 - [ ] Buffed enemies
 - [ ] New Enemies
 - [ ] New Bosses

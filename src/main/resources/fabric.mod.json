@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "survivallevelling",
+  "id": "examplemod",
   "version": "${version}",
 
-  "name": "Survival Leveling",
-  "description": "This mod introduces a new leveling system that affects your health.",
+  "name": "Example Mod",
+  "description": "This mod aims to help new BTA modders.",
   "authors": [
-    "midnadimple"
+    "Turnip Labs"
   ],
   "contact": {
     "homepage": "",
-    "sources": "https://github.com/midnadimple/survival-levelling"
+    "sources": ""
   },
 
 	"icon": "icon.png",
@@ -19,24 +19,24 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"midnadimple.survivallevelling.SurvivalLevelling"
+			"turniplabs.examplemod.ExampleMod"
     ],
 		"beforeGameStart": [
-			"midnadimple.survivallevelling.SurvivalLevelling"
+			"turniplabs.examplemod.ExampleMod"
 		],
 		"afterGameStart": [
-			"midnadimple.survivallevelling.SurvivalLevelling"
+			"turniplabs.examplemod.ExampleMod"
 		],
 		"recipesReady": [
-			"midnadimple.survivallevelling.SurvivalLevelling"
+			"turniplabs.examplemod.ExampleMod"
 		]
 	},
   "mixins": [
-		"survivallevelling.mixins.json"
+      "examplemod.mixins.json"
   ],
 
   "depends": {
-		"minecraft": "7.1",
+		"minecraft": "^7.2-beta",
     "fabricloader": ">=0.15.5"
   },
   "suggests": {
